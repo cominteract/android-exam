@@ -30,15 +30,15 @@ class PersonsAdapter(val onClick: (User) -> Unit) : RecyclerView.Adapter<Recycle
         (holder as PersonViewHolder?)?.bind(user = users[position])
     }
 
-
     class PersonViewHolder(val binding: ItemPersonBinding, val onClick: (User) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.tvUserFullname.text = user.fullName
             binding.tvUserEmail.text = user.email
             binding.ivUserThumbnail.loadUrl(
-                user.thumbnailUrl
+                url = user.thumbnailUrl
             )
+            binding.root.setOnClickListener { onClick(user) }
         }
     }
 

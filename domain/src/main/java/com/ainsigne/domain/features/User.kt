@@ -1,7 +1,10 @@
 package com.ainsigne.domain.features
 
+import android.os.Parcelable
 import com.ainsigne.domain.extension.EMPTY
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class User(
     val id: String = EMPTY,
     val gender: String = EMPTY,
@@ -13,6 +16,7 @@ data class User(
     val country: String = EMPTY,
     val state: String = EMPTY,
     val streetName: String = EMPTY,
+    val fullAddress: String = EMPTY,
     val timezoneDescription: String = EMPTY,
     val email: String = EMPTY,
     val dob: String = EMPTY,
@@ -22,5 +26,4 @@ data class User(
     val largeUrl: String = EMPTY,
     val mediumUrl: String = EMPTY,
     val thumbnailUrl: String = EMPTY
-
-)
+) : Parcelable

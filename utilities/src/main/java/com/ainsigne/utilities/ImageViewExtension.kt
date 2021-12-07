@@ -25,7 +25,8 @@ fun ImageView.toRoundImage(
 }
 
 fun ImageView.loadUrl(
-    url: String?,
+    @DrawableRes drawable: Int? = R.drawable.image_profile_empty,
+    url: String? = null,
     @DrawableRes placeholder: Int = R.drawable.image_profile_empty,
     @DrawableRes error: Int = R.drawable.image_profile_empty,
     @DimenRes radius: Int? = null
@@ -42,8 +43,16 @@ fun ImageView.loadUrl(
             )
         )
     }
-    Glide.with(this.context)
-        .load(url)
-        .apply(requestOptions)
-        .into(this)
+    url?.let {
+        Glide.with(this.context)
+            .load(url)
+            .apply(requestOptions)
+            .into(this)
+    } ?: run {
+        Glide.with(this.context)
+            .load(drawable)
+            .apply(requestOptions)
+            .into(this)
+    }
+
 }

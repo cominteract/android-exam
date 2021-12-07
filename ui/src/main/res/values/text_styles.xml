@@ -84,5 +84,8 @@
     <style name="Text.Body.2.Secondary">
         <item name="android:textColor">@color/color_on_secondary</item>
     </style>
-
+    <style name="Text.Body.2.Secondary.Bold">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

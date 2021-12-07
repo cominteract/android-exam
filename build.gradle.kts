@@ -2,6 +2,7 @@
 buildscript {
 
     val kotlinVersion by extra("1.5.10")
+    val kotlin_version by extra("1.5.10")
     val hiltVersion = "2.38.1"
     val gradleVersion = Versions.ANDROID_GRADLE_PLUGIN
     val navigationVersion = "2.3.5"

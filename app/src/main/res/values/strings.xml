@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PersonsDemoApp</string>
     <string name="person_list">Choose Contacts</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="birthday_with_age">Birthday : %s (Age : %s)</string>
 </resources>

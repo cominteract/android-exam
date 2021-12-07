@@ -1,10 +1,8 @@
 package com.ainsigne.utilities
 
 import android.annotation.SuppressLint
-import android.os.Build
-import android.util.Log
 import java.text.SimpleDateFormat
-import java.util.Date
+import java.util.*
 
 
 @SuppressLint("SimpleDateFormat")
@@ -15,6 +13,9 @@ val hourFormat = SimpleDateFormat("h:mm:ss aa")
 
 @SuppressLint("SimpleDateFormat")
 val fullFormat = SimpleDateFormat("MMM dd yyyy hh:mm:ss aa")
+
+@SuppressLint("SimpleDateFormat")
+val utcFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX")
 
 @JvmInline
 private value class Hours(private val minutes: Long) {
@@ -33,6 +34,11 @@ private value class TimeLapses(private val timeLapses: Long) {
     fun timeLapsesInMinutes(): Long {
         return (timeLapses / (MAX_MILLI * MAX_SECONDS)) % MAX_MINUTES
     }
+}
+
+fun String.utcToDate () : Date? {
+    utcFormat.timeZone = TimeZone.getTimeZone("UTC")
+    return utcFormat.parse(this)
 }
 
 fun Date.dtDifferenceInHours(dateTimeIn: Date): Long {
