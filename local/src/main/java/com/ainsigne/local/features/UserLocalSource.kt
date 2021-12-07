@@ -20,6 +20,10 @@ class UserLocalSource @Inject constructor(
         userDao.insertUsers(users = users)
     }
 
+    suspend fun deleteAllUsers() {
+        userDao.deleteAllUsers()
+    }
+
 
 
 }
