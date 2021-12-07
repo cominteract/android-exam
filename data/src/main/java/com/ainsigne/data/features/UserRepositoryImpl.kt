@@ -22,6 +22,7 @@ UserRepositoryImpl
     private val userRemoteSource: UserRemoteSource
 ) : UserRepository {
     override suspend fun refreshUsers() {
+        userLocalSource.deleteAllUsers()
         val remoteUsers = userRemoteSource.refreshUsers()
         val localUsers = remoteUsers.map {
             it.mapDomainToLocal()
