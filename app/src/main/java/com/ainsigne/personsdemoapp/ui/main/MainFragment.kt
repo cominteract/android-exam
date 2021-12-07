@@ -34,6 +34,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     override fun onResume() {
         super.onResume()
+        viewModel.refreshCached()
     }
 
 

@@ -57,6 +57,10 @@ class MainViewModel @Inject constructor(
 
     }
 
+    fun refreshCached() {
+        refreshContent.postValue(true)
+    }
+
     fun refreshContent() {
         viewModelScope.launch(
             CoroutineExceptionHandler { _, error ->
