@@ -28,6 +28,10 @@ android {
 
     buildTypes {
         getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
@@ -39,10 +43,10 @@ android {
             applicationId("com.ainsigne.personsapp")
             versionNameSuffix("")
         }
-        create("stg") {
+        create("mock") {
             dimension = "personsapp"
             applicationId("com.ainsigne.personsapp")
-            versionNameSuffix("_stg")
+            versionNameSuffix("_mock")
         }
     }
     compileOptions {
@@ -61,6 +65,24 @@ android {
 
     testOptions.unitTests.isIncludeAndroidResources = true
 }
+
+androidComponents {
+    beforeVariants { variantBuilder ->
+
+        // To check for a certain build type, use variantBuilder.buildType == "<buildType>"
+        if (variantBuilder.productFlavors.containsAll(listOf("personsapp" to "prod")) && variantBuilder.buildType == "debug") {
+            // Gradle ignores any variants that satisfy the conditions above.
+            variantBuilder.enabled = false
+        }
+        if (variantBuilder.productFlavors.containsAll(listOf("personsapp" to "mock")) && variantBuilder.buildType == "release") {
+            // Gradle ignores any variants that satisfy the conditions above.
+            variantBuilder.enabled = false
+
+        }
+
+    }
+}
+
 
 dependencies {
     implementation(project(":ui"))

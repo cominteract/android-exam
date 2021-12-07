@@ -29,9 +29,6 @@ class MainViewModel @Inject constructor(
     private val refreshContent = MutableLiveData(true)
 
     init {
-        viewModelScope.launch {
-            userRepository.refreshUsers()
-        }
         viewModelScope.launch(
             CoroutineExceptionHandler { _, error ->
                 emitState {
@@ -44,6 +41,9 @@ class MainViewModel @Inject constructor(
                 refreshContent.asFlow(),
                 userRepository.watchAllUsers()
             ) { _, data->
+                if (data.isNullOrEmpty()) {
+                    userRepository.refreshUsers()
+                }
                 data
             }.flatMapLatest { data ->
                 flowOf(data)

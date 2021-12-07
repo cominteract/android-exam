@@ -14,7 +14,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             android:id="@+id/iv_user_thumbnail"
-            android:scaleType="centerInside"
+            android:scaleType="fitXY"
             android:layout_width="0dp"
             android:src="@drawable/image_profile_empty"
             android:layout_height="@dimen/spacing_xxxxl" />

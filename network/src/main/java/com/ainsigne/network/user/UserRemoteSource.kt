@@ -16,7 +16,7 @@ class UserRemoteSource @Inject constructor(
     suspend fun refreshUsers() = apiSafeCall {
         withContext(dispatcherIO) {
             val results = userService.getUserList(
-                results = "150"
+                results = "50"
             ).results
             results.map {
                 it.mapUserResponseToDomain()
