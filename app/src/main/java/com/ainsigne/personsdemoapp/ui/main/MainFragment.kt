@@ -4,6 +4,7 @@ package com.ainsigne.personsdemoapp.ui.main
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ainsigne.domain.features.User
 import com.ainsigne.personsdemoapp.base.BaseFragment
@@ -24,7 +25,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 viewModel.refreshContent()
             }
             adapter = PersonsAdapter {
-
+                findNavController().navigate(MainFragmentDirections.mainToDetails())
             }
             rvPersons.layoutManager = LinearLayoutManager(requireActivity())
             rvPersons.adapter = adapter
@@ -33,7 +34,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     override fun onResume() {
         super.onResume()
-        viewModel.refreshContent()
     }
 
 

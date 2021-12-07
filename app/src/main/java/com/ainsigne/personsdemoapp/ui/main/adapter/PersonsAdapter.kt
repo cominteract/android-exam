@@ -30,7 +30,6 @@ class PersonsAdapter(val onClick: (User) -> Unit) : RecyclerView.Adapter<Recycle
         (holder as PersonViewHolder?)?.bind(user = users[position])
     }
 
-
     class PersonViewHolder(val binding: ItemPersonBinding, val onClick: (User) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
@@ -39,6 +38,7 @@ class PersonsAdapter(val onClick: (User) -> Unit) : RecyclerView.Adapter<Recycle
             binding.ivUserThumbnail.loadUrl(
                 user.thumbnailUrl
             )
+            binding.root.setOnClickListener { onClick(user) }
         }
     }
 
