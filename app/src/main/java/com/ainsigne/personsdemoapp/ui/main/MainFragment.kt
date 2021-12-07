@@ -1,6 +1,7 @@
 package com.ainsigne.personsdemoapp.ui.main
 
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.ainsigne.personsdemoapp.base.BaseFragment
@@ -35,7 +36,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.personsState.collect { state ->
                 when(state) {
-
+                    is PersonsState.Error -> Log.d(" Data Error ", " Data ${state.error}")
                 }
             }
         }

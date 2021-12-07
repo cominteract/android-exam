@@ -1,12 +1,25 @@
 package com.ainsigne.network.base
 
-class UserResponse(
+data class UserResponse(
     val gender: String,
     val name: NameResponse,
-    val location: LocationResponse,
-    val email: String,
-    val dob: DOBResponse,
     val phone: String,
     val cell: String,
-    val picture: PictureResponse
+    val email: String,
+    val dob: DOBResponse,
+    val picture: PictureResponse,
+    val location: LocationResponse
+)
+
+data class ResultResponse(
+    val results: List<UserResponse>,
+    val info: InfoResponse
+)
+
+
+data class InfoResponse(
+    val seed: String,
+    val results: Int,
+    val page: Int,
+    val version: String
 )
