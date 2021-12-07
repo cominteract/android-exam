@@ -42,14 +42,17 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.personsState.collect { state ->
                 when(state) {
+                    is PersonsState.HideLoader -> binding.swipeRefresh.isRefreshing = false
+                    is PersonsState.ShowLoader -> binding.swipeRefresh.isRefreshing = true
                     is PersonsState.SuccessPersonsDisplay -> populatePersons(state.users)
-                    is PersonsState.Error -> Log.d(" Data Error ", " Data ${state.error}")
+                    is PersonsState.Error -> binding.swipeRefresh.isRefreshing = false
                 }
             }
         }
     }
 
     private fun populatePersons(users: List<User>){
+        binding.swipeRefresh.isRefreshing = false
         adapter?.users = users
         adapter?.notifyDataSetChanged()
     }
