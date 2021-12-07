@@ -25,7 +25,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 viewModel.refreshContent()
             }
             adapter = PersonsAdapter {
-                findNavController().navigate(MainFragmentDirections.mainToDetails())
+                findNavController().navigate(MainFragmentDirections.mainToDetails(user = it))
             }
             rvPersons.layoutManager = LinearLayoutManager(requireActivity())
             rvPersons.adapter = adapter

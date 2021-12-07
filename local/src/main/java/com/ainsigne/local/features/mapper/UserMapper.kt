@@ -48,6 +48,7 @@ fun com.ainsigne.local.features.User.mapLocalToDomain(
         phone = this.phone,
         dob = this.dob,
         city = this.city,
-        country = this.country
+        country = this.country,
+        fullAddress = "${this.streetName} ${this.city} ${this.state} ${this.country}"
     )
 }
