@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PersonsApp.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/PersonsApp.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persons-app.iml" filepath="$PROJECT_DIR$/.idea/modules/persons-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/persons-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/persons-app.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/persons-app.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/persons-app.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/persons-app.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/persons-app.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/local/persons-app.local.iml" filepath="$PROJECT_DIR$/.idea/modules/local/persons-app.local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/persons-app.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/persons-app.network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ui/persons-app.ui.iml" filepath="$PROJECT_DIR$/.idea/modules/ui/persons-app.ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utilities/persons-app.utilities.iml" filepath="$PROJECT_DIR$/.idea/modules/utilities/persons-app.utilities.iml" />
+    </modules>
+  </component>
+</project>
