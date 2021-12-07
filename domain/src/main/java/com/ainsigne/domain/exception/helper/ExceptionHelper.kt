@@ -1,5 +1,6 @@
 package com.ainsigne.domain.exception.helper
 
+import android.util.Log
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import java.lang.Exception

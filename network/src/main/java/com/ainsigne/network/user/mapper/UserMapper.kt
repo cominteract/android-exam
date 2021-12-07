@@ -3,8 +3,7 @@ package com.ainsigne.network.user.mapper
 import com.ainsigne.domain.features.User
 import com.ainsigne.network.base.UserResponse
 
-fun UserResponse.mapForecastToDommain(
-
+fun UserResponse.mapUserResponseToDomain(
 ): User {
     return User(
         gender = this.gender,
@@ -25,6 +24,5 @@ fun UserResponse.mapForecastToDommain(
         dob = this.dob.date,
         city = this.location.city,
         country = this.location.country
-
     )
 }

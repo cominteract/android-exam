@@ -5,6 +5,7 @@ import Versions.coroutineCore
 import Versions.coroutineTestVersion
 import Versions.dataStoreVersion
 import Versions.expressoCoreVersion
+import Versions.glideVersion
 import Versions.hiltAndroidXVersion
 import Versions.hiltDaggerTestVersion
 import Versions.hiltVersion
@@ -76,6 +77,7 @@ object Versions {
     const val liveDataVersion = "2.3.1"
     const val dataStoreVersion = "1.0.0"
     const val retrofitVersion = "2.9.0"
+    const val glideVersion = "4.12.0"
 }
 
 object Libraries {
@@ -116,6 +118,11 @@ object Libraries {
         "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinSerializationJsonVersion"
     const val kotlinSerializationProperties =
         "org.jetbrains.kotlinx:kotlinx-serialization-properties:$kotlinSerializationPropertiesVersion"
+
+    // glide
+    const val glide = "com.github.bumptech.glide:glide:$glideVersion"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
+
 
     //coroutine
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineCore"

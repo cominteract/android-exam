@@ -29,7 +29,7 @@ android {
             )
 
         }
-        create("stg") {
+        create("mock") {
             dimension = "personsapp"
             buildConfigField(
                     "String",

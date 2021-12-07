@@ -23,7 +23,7 @@ android {
         create("prod") {
             dimension = "personsapp"
         }
-        create("stg") {
+        create("mock") {
             dimension = "personsapp"
         }
     }
@@ -72,6 +72,9 @@ dependencies {
     implementation(Libraries.hiltViewModel)
     kapt(Libraries.kaptAndroidXCompiler)
 
+
+    implementation(Libraries.glide)
+    kapt(Libraries.glideCompiler)
 
     testImplementation(Libraries.junitTestImp)
     testImplementation(Libraries.coroutineTestImp)

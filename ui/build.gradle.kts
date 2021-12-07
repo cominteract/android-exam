@@ -23,7 +23,7 @@ android {
         create("prod") {
             dimension = "personsapp"
         }
-        create("stg") {
+        create("mock") {
             dimension = "personsapp"
         }
     }

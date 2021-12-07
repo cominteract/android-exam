@@ -1,12 +1,12 @@
 package com.ainsigne.network.base
 
+import com.ainsigne.domain.extension.EMPTY
 import java.sql.Time
 
 data class LocationResponse(
-    val city: String,
-    val country: String,
-    val state: String,
-    val postcode: Int,
+    val city: String = EMPTY,
+    val country: String = EMPTY,
+    val state: String = EMPTY,
     val street: StreetResponse,
     val coordinates: CoordinateResponse,
     val timezone: TimezoneResponse

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ainsigne.personsdemoapp.ui.main.MainFragment"
+        android:label="@string/app_name"
+        >
+<!--        <action android:id="@+id/main_to_details"-->
+<!--            app:enterAnim="@anim/pull_up_from_bottom"-->
+<!--            app:exitAnim="@anim/pull_bottom_from_up"-->
+<!--            app:popEnterAnim="@anim/pull_up_from_bottom"-->
+<!--            app:popExitAnim="@anim/pull_bottom_from_up"-->
+<!--            />-->
+    </fragment>
+
+
+
+</navigation>

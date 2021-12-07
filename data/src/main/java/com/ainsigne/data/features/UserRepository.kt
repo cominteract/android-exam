@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 interface UserRepository {
     suspend fun refreshUsers()
 
-    suspend fun watchUsersByLastName(): Flow<List<User>>
+    suspend fun watchUsersByLastName(lastName: String): Flow<List<User>>
 
     suspend fun watchAllUsers(): Flow<List<User>>
 }

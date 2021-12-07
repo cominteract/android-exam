@@ -4,7 +4,7 @@ import com.ainsigne.domain.dispatcher.dispatcherIO
 import com.ainsigne.domain.exception.apiSafeCall
 import com.ainsigne.network.BuildConfig
 import com.ainsigne.network.user.UserService
-import com.ainsigne.network.user.mapper.mapForecastToDommain
+import com.ainsigne.network.user.mapper.mapUserResponseToDomain
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import javax.inject.Inject
@@ -15,11 +15,11 @@ class UserRemoteSource @Inject constructor(
 ) {
     suspend fun refreshUsers() = apiSafeCall {
         withContext(dispatcherIO) {
-            val users = userService.getUserList(
-                results = "150"
-            )
-            users.map {
-                it.mapForecastToDommain()
+            val results = userService.getUserList(
+                results = "50"
+            ).results
+            results.map {
+                it.mapUserResponseToDomain()
             }
         }
     }
