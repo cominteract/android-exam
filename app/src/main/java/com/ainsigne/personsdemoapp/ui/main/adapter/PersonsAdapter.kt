@@ -2,12 +2,11 @@ package com.ainsigne.personsdemoapp.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.ainsigne.domain.features.User
 import com.ainsigne.personsdemoapp.R
 import com.ainsigne.personsdemoapp.databinding.ItemPersonBinding
-import com.google.android.material.shape.CornerFamily
+import com.ainsigne.utilities.loadUrl
 
 class PersonsAdapter(val onClick: (User) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -36,6 +35,10 @@ class PersonsAdapter(val onClick: (User) -> Unit) : RecyclerView.Adapter<Recycle
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.tvUserFullname.text = user.fullName
+            binding.tvUserEmail.text = user.email
+            binding.ivUserThumbnail.loadUrl(
+                user.thumbnailUrl
+            )
         }
     }
 

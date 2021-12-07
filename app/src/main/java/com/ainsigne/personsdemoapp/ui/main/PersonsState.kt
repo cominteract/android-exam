@@ -7,5 +7,5 @@ sealed class PersonsState {
     object ShowLoader : PersonsState()
     object HideLoader : PersonsState()
     data class Error(val error: String = EMPTY) : PersonsState()
-    data class SuccessPersonsDisplay(val Personss: List<User>) : PersonsState()
+    data class SuccessPersonsDisplay(val users: List<User>) : PersonsState()
 }

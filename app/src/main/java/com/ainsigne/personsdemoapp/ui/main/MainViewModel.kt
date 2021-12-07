@@ -48,7 +48,6 @@ class MainViewModel @Inject constructor(
             }.flatMapLatest { data ->
                 flowOf(data)
             }.collect { data ->
-                Log.d(" Data ", " Data $data ")
                 mutablePersonsState.emit(PersonsState.HideLoader)
                 mutablePersonsState.emit(PersonsState.SuccessPersonsDisplay(data))
             }

@@ -73,6 +73,9 @@ dependencies {
     kapt(Libraries.kaptAndroidXCompiler)
 
 
+    implementation(Libraries.glide)
+    kapt(Libraries.glideCompiler)
+
     testImplementation(Libraries.junitTestImp)
     testImplementation(Libraries.coroutineTestImp)
     testImplementation(Libraries.archCoreTestImp)
