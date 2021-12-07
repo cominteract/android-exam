@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PersonsDemoApp</string>
+    <string name="person_list">Choose Contacts</string>
 </resources>

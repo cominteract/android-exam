@@ -29,6 +29,7 @@ class MainViewModel @Inject constructor(
     private val refreshContent = MutableLiveData(true)
 
     init {
+
         viewModelScope.launch(
             CoroutineExceptionHandler { _, error ->
                 emitState {
@@ -42,6 +43,7 @@ class MainViewModel @Inject constructor(
                 userRepository.watchAllUsers()
             ) { _, data->
                 if (data.isNullOrEmpty()) {
+                    mutablePersonsState.emit(PersonsState.ShowLoader)
                     userRepository.refreshUsers()
                 }
                 data
@@ -56,6 +58,16 @@ class MainViewModel @Inject constructor(
     }
 
     fun refreshContent() {
-        refreshContent.postValue(true)
+        viewModelScope.launch(
+            CoroutineExceptionHandler { _, error ->
+                emitState {
+                    mutablePersonsState.emit(PersonsState.HideLoader)
+                    mutablePersonsState.emit(PersonsState.Error(error.localizedMessage))
+                }
+            }
+        ) {
+            mutablePersonsState.emit(PersonsState.ShowLoader)
+            userRepository.refreshUsers()
+        }
     }
 }
